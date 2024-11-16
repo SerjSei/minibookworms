@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's Big Adventure</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 60vw;
+            height: 80vh;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .book-page {
+            position: absolute;
+            width: 94.5%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .page-content {
+            font-size: 1.2rem;
+        }
+
+        .card-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+            position: absolute;
+            bottom: 20px;
+            padding: 0 20px;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40;
+            transform: translateY(-5px);
+        }
+
+        button:disabled {
+            background-color: #b2dfdb;
+            cursor: not-allowed;
+        }
+
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .language-switch select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #00796b;
+            font-size: 1rem;
+            appearance: none;
+            background: #e0f7fa;
+            cursor: pointer;
+        }
+
+        .language-switch select:focus {
+            outline: none;
+        }
+
+        .background {
+            background: linear-gradient(135deg, #4dd0e1, #00acc1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Language Switch -->
+        <div class="language-switch">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="sw">Swahili</option>
+            </select>
+        </div>
+
+        <!-- Pages -->
+        <div class="book-page visible" id="cover-page">
+            <h1 class="page-title">Leo's Big Adventure</h1>
+            <p class="page-content">Click next to start the story.</p>
+        </div>
+
+        <div class="book-page" id="page-1">
+            <h2 class="page-title">Page 1: Leo the lion loved to roam...</h2>
+            <p class="page-content">Leo the lion loved to roam the savannah. He was brave and curious, always searching for new adventures.</p>
+        </div>
+
+        <div class="book-page" id="page-2">
+            <h2 class="page-title">Page 2: A strange noise...</h2>
+            <p class="page-content">One day, Leo heard a strange noise coming from the forest. "I must find out what that is!" Leo said, and off he went.</p>
+        </div>
+
+        <div class="book-page" id="page-3">
+            <h2 class="page-title">Page 3: Helping a friend...</h2>
+            <p class="page-content">As Leo ventured deeper, he saw a small bird stuck in a bush. "Don't worry, little bird! I'll help you," said Leo.</p>
+        </div>
+
+        <!-- Additional pages until page 16 -->
+        <div class="book-page" id="page-4">
+            <h2 class="page-title">Page 4: The bird is saved...</h2>
+            <p class="page-content">Leo gently freed the bird. "Thank you, Leo! You are so kind. My name is Pip," chirped the bird happily.</p>
+        </div>
+
+        <!-- Final page -->
+        <div class="book-page" id="finalPage">
+            <h2 class="page-title">The End</h2>
+            <p class="page-content">Leo's heart was full of joy, knowing that with friends, every journey is better.</p>
+        </div>
+
+        <!-- Page Controls -->
+        <div class="card-controls">
+            <button id="prev-btn" disabled>Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <div class="background"></div>
+
+    <script>
+        const pages = ['cover-page', 'page-1', 'page-2', 'page-3', 'page-4', 'finalPage'];
+        let currentPage = 0;
+
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        prevBtn.addEventListener('click', () => changePage(-1));
+        nextBtn.addEventListener('click', () => changePage(1));
+
+        function changePage(direction) {
+            document.getElementById(pages[currentPage]).classList.remove('visible');
+            currentPage += direction;
+            document.getElementById(pages[currentPage]).classList.add('visible');
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = currentPage === pages.length - 1;
+        }
+
+        // Language switcher logic with simple text changes
+        const languageSelect = document.getElementById('language-select');
+        const content = {
+            en: [
+                'Leo\'s Big Adventure',
+                'Click next to start the story.',
+                'Page 1: Leo the lion loved to roam...',
+                'Leo the lion loved to roam the savannah. He was brave and curious, always searching for new adventures.',
+                'Page 2: A strange noise...',
+                'One day, Leo heard a strange noise coming from the forest. "I must find out what that is!" Leo said, and off he went.',
+                'Page 3: Helping a friend...',
+                'As Leo ventured deeper, he saw a small bird stuck in a bush. "Don\'t worry, little bird! I\'ll help you," said Leo.'
+                // Add more pages here
+            ],
+            es: [
+                'La Gran Aventura de Leo',
+                'Haga clic en siguiente para comenzar la historia.',
+                'Página 1: A Leo le encantaba explorar...',
+                'A Leo el león le encantaba recorrer la sabana. Era valiente y curioso, siempre buscando nuevas aventuras.',
+                'Página 2: Un ruido extraño...',
+                'Un día, Leo escuchó un ruido extraño proveniente del bosque. "¡Debo descubrir qué es!" dijo Leo, y se fue corriendo.',
+                'Página 3: Ayudando a un amigo...',
+                'A medida que Leo se adentraba más, vio a un pequeño pájaro atrapado en un arbusto. "¡No te preocupes, pajarito! Te ayudaré", dijo Leo.'
+                // Add more pages here
+            ],
+            fr: [
+                'La Grande Aventure de Leo',
+                'Cliquez sur suivant pour commencer l\'histoire.',
+                'Page 1: Leo aimait explorer...',
+                'Leo le lion aimait explorer la savane. Il était courageux et curieux, toujours à la recherche de nouvelles aventures.',
+                'Page 2: Un bruit étrange...',
+                'Un jour, Leo entendit un bruit étrange venant de la forêt. "Je dois découvrir ce que c\'est!" dit Leo, et il partit.',
+                'Page 3: Aider un ami...',
+                'Alors que Leo s\'aventurait plus loin, il vit un petit oiseau coincé dans un buisson. "Ne t\'inquiète pas, petit oiseau! Je vais t\'aider", dit Leo.'
+                // Add more pages here
+            ],
+            de: [
+                'Leos Großes Abenteuer',
+                'Klicken Sie auf Weiter, um die Geschichte zu starten.',
+                'Seite 1: Leo liebte es zu streifen...',
+                'Leo, der Löwe, liebte es, durch die Savanne zu streifen. Er war mutig und neugierig, immer auf der Suche nach neuen Abenteuern.',
+                'Seite 2: Ein seltsames Geräusch...',
+                'Eines Tages hörte Leo ein seltsames Geräusch aus dem Wald. "Ich muss herausfinden, was das ist!" sagte Leo, und machte sich auf den Weg.',
+                'Seite 3: Einem Freund helfen...',
+                'Als Leo tiefer hinein ging, sah er einen kleinen Vogel, der in einem Busch feststeckte. "Keine Sorge, kleiner Vogel! Ich werde dir helfen", sagte Leo.'
+                // Add more pages here
+            ],
+            sw: [
+                'Safari Kubwa ya Leo',
+                'Bonyeza inayofuata kuanza hadithi.',
+                'Ukurasa 1: Leo alipenda kuzurura...',
+                'Leo simba alipenda kuzurura savanna. Alikuwa shujaa na mwenye hamu ya kujifunza, kila mara akitafuta safari mpya.',
+                'Ukurasa 2: Kelele ya ajabu...',
+                'Siku moja, Leo alisikia kelele ya ajabu ikitoka msituni. "Lazima nijue hiyo ni nini!" alisema Leo, na akaenda kuichunguza.',
+                'Ukurasa 3: Kumsaidia rafiki...',
+                'Leo alipokuwa akiendelea zaidi, alimwona ndege mdogo aliyekwama kwenye kichaka. "Usijali, ndege mdogo! Nitakusaidia," alisema Leo.'
+                // Add more pages here
+            ]
+        };
+
+        languageSelect.addEventListener('change', (e) => {
+            const lang = e.target.value;
+            document.querySelectorAll('.book-page').forEach((page, index) => {
+                page.querySelector('.page-title').textContent = content[lang][index * 2];
+                page.querySelector('.page-content').textContent = content[lang][index * 2 + 1];
+            });
+        });
+    </script>
+</body>
+</html>
