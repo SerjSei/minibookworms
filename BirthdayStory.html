@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Book</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -46,13 +45,6 @@
         }
 
         .page-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            width: 85%;
-            text-align: justify;
-        }
-
-        .main-title {
             font-size: 2rem;
             margin-bottom: 20px;
         }
@@ -130,127 +122,58 @@
     <div class="container">
         <!-- Language Switch -->
         <div class="language-switch">
-            <select id="language-select" onchange="updateContent()">
+            <select id="language-select">
+                <!--<option value="fr">Finnish</option>-->
                 <option value="en">English</option>
-                <option value="fi">Finnish</option>
-                <option value="sp">Spanish</option>
+                <option value="es">Spanish</option>
                 <option value="fr">French</option>
-                <option value="ja">Japaneese</option>
-                <option value="vi">Vietnameese</option>
-                <option value="ru">Russian</option>
-                <option value="ar">Arabic</option>
-                <option value="sw">Swedish</option>
-                <option value="ro">Romanian</option>
-                <option value="tu">Turkish</option>
-                <option value="uk">Ukrainian</option>
-                <option value="po">Polish</option>
-                <option value="la">Latvian</option>
-                <option value="sa">Swahili</option>
-                <option value="ba">Bangla</option>
-                <option value="ku">Kurdish</option>
-                <option value="ge">German</option>
-                <option value="al">Albanian</option>
+                <!--<option value="es">Japaneese</option>
+                <option value="en">Vietnameese</option>
+                <option value="es">Russian</option>
+                <option value="fr">Arabic</option>
+                <option value="en">Swedish</option>
+                <option value="es">Romanian</option>
+                <option value="fr">Turkish</option>
+                <option value="en">Ukrainian</option>
+                <option value="es">Polish</option>
+                <option value="fr">Latvian</option>
+                <option value="en">Swahili</option>
+                <option value="es">Bangla</option>
+                <option value="fr">Kurdish</option>
+                <option value="en">German</option>-->
             </select>
         </div>
 
         <!-- Pages -->
         <div class="book-page visible" id="cover-page">
-            <h1 class="main-title">Leo's Birthday</h1>
+            <h1 class="page-title">The Adventures of Timmy</h1>
             <p class="page-content">Click next to start the story.</p>
         </div>
 
         <div class="book-page" id="page-1">
-            <h2 class="page-title">Leo the lion was very excited when he woke up. Today was the day: it was his 7th birthday. As Leo got up and looked out the window, his smile suddenly dropped. It was raining in the Mighty Jungle. Oh no, Leo thought. We were supposed to go celebrate my birthday on the beach. How are we going to do that now?  </h2>
-            <p class="page-content">1</p>
+            <h2 class="page-title">Page 1: Once upon a time...</h2>
+            <p class="page-content">Timmy was a curious little boy who loved to explore.</p>
         </div>
 
         <div class="book-page" id="page-2">
-            <h2 class="page-title">After eating breakfast, it was time for Leo’s friends to arrive, and soon someone knocked on the door. In stepped Polly the parrot and Sally the snake. Polly was wearing a yellow rain jacket and boots, and Sally had a red umbrella. </h2>
-            <p class="page-content">2</p>
+            <h2 class="page-title">Page 2: Timmy's Journey Begins</h2>
+            <p class="page-content">One sunny day, Timmy found a mysterious map in his backyard.</p>
         </div>
 
         <div class="book-page" id="page-3">
-            <h2 class="page-title">“Oh, I know what we should do. Let’s bake a cake!” Sally said. <br>
-                “We could have a baking competition,” Polly suggested. “That way everyone can make something they like.” <br>
-                “That’s an amazing idea,” Leo agreed. </h2>
-            <p class="page-content">3</p>
+            <h2 class="page-title">Page 3: The Mysterious Forest</h2>
+            <p class="page-content">The map led Timmy to a forest filled with magical creatures.</p>
         </div>
 
         <div class="book-page" id="page-4">
-            <h2 class="page-title">The friends hurried into the kitchen, ready to turn Leo’s birthday into a rainy-day bake-off. Pots and pans clanged, flour dusted the air like soft snow, and colorful bowls of sugar, eggs, and sprinkles were set out on the counters. </h2>
-            <p class="page-content">4</p>
-        </div>
-
-        <div class="book-page" id="page-5">
-            <h2 class="page-title">The friends hurried into the kitchen, ready to turn Leo’s birthday into a rainy-day bake-off. Pots and pans clanged, flour dusted the air like soft snow, and colorful bowls of sugar, eggs, and sprinkles were set out on the counters.  </h2>
-            <p class="page-content">5</p>
-        </div>
-
-        <div class="book-page" id="page-6">
-            <h2 class="page-title">“Alright, what’s everyone going to make?” Leo asked, tying a big apron around himself. It was so big it almost touched his toes! <br>
-                “I’m making chocolate banana cupcakes!” Polly chirped. “They’re delicious and...parrot-approved!” She gave a little twirl, flapping her bright wings.  </h2>
-            <p class="page-content">6</p>
-        </div>
-
-        <div class="book-page" id="page-7">
-            <h2 class="page-title">Sally slid over to her bowl, grinning. “I’m making slithery cinnamon rolls! They’ll be gooey and warm—perfect for a rainy day.” <br>
-                Leo scratched his mane, thinking hard. “I’ll make a big, tall rainbow cake! With seven layers, one for each year!” he said with a grin. </h2>
-            <p class="page-content">7</p>
-        </div>
-
-        <div class="book-page" id="page-8">
-            <h2 class="page-title">Soon, the kitchen was filled with the smell of melted chocolate, cinnamon, and the soft hum of the oven. Polly squawked as she added extra chocolate chips to her cupcakes. Sally twirled in excitement as she rolled up her cinnamon dough, dusting each layer with sugar and spice. </h2>
-            <p class="page-content">8</p>
-        </div>
-
-        <div class="book-page" id="page-9">
-            <h2 class="page-title">Leo carefully layered his rainbow cake, stacking colors one by one until it reached as tall as his nose. He licked a bit of frosting from his paw and smiled. “This is going to be the best cake ever!”  <br>
-            Just then, a tiny knock sounded at the door. “Who could that be?” Leo wondered. </h2>
-            <p class="page-content">9</p>
-        </div>
-
-        <div class="book-page" id="page-10">
-            <h2 class="page-title">Leo opened the door to find Ollie the owl standing there with a little box tied up in a golden ribbon. Ollie blinked his big, wise eyes and said, “I heard it’s someone’s birthday! I brought a special treat—homemade honey muffins!” <br>
-            Leo’s face lit up. “Oh, thank you, Ollie! Come in and join the bake-off!”  </h2>
-            <p class="page-content">10</p>
-        </div>
-
-        <div class="book-page" id="page-11">
-            <h2 class="page-title">Leo opened the door to find Ollie the owl standing there with a little box tied up in a golden ribbon. Ollie blinked his big, wise eyes and said, “I heard it’s someone’s birthday! I brought a special treat—homemade honey muffins!” </h2>
-            <p class="page-content">11</p>
-        </div>
-
-        <div class="book-page" id="page-12">
-            <h2 class="page-title">As Ollie settled in with his muffin batter, they all laughed, chatted, and shared their baking secrets. Ollie even taught them how to fold batter gently so it stayed fluffy. The kitchen was warm and cozy, filled with the soft patter of rain outside and the happy sounds of mixing, stirring, and laughter.  </h2>
-            <p class="page-content">12</p>
-        </div>
-
-        <div class="book-page" id="page-13">
-            <h2 class="page-title">Finally, after a lot of waiting, their treats were ready. They set up a cozy corner with a big picnic blanket, decorated with all the yummy goodies they had baked. <br>
-            Leo’s eyes sparkled as he looked around. “Even though we couldn’t go to the beach, this is the best birthday I could ask for,” he said. His friends cheered, and Polly put a little paper crown on his head. </h2>
-            <p class="page-content">13</p>
-        </div>
-
-        <div class="book-page" id="page-14">
-            <h2 class="page-title">“Make a wish, Leo!” Sally said, handing him a cupcake with a tiny, glowing candle. <br>
-            Leo closed his eyes, took a deep breath, and thought of his wish. Then he blew out the candle, feeling warm and happy. When he opened his eyes, he was met with a huge group hug from his friends.  </h2>
-            <p class="page-content">14</p>
-        </div>
-
-        <div class="book-page" id="page-15">
-            <h2 class="page-title">The rain continued to fall outside, but inside, the Mighty Jungle felt warm, bright, and filled with laughter. And Leo knew, as he munched on his rainbow cake, that sometimes the best celebrations are the ones where friends make the day magical, no matter the weather.  </h2>
-            <p class="page-content">15</p>
-        </div>
-
-        <div class="book-page" id="page-16">
-            <h2 class="page-title">And from that day on, Leo knew that rain or shine, the best birthdays were the ones spent with friends who knew just how to make any day special. </h2>
-            <p class="page-content">16</p>
+            <h2 class="page-title">Page 4: The Big Discovery</h2>
+            <p class="page-content">Timmy discovered an ancient treasure hidden deep within the forest.</p>
         </div>
 
         <!-- Final page for writers and illustrators -->
 <div class="book-page" id="finalPage">
-    <h2 class="main-title">Writer and Illustrator</h2>
-    <p class="page-content">Writer: Mette</p>
+    <h2 class="page-title">Writer and Illustrator</h2>
+    <p class="page-content">Writer: Vilma</p>
     <p class="page-content">Illustrator: Seidi</p>
 </div>
 
@@ -265,7 +188,7 @@
     <div class="background"></div>
 
     <script>
-        const pages = ['cover-page', 'page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7', 'page-8', 'page-9', 'page-10', 'page-11', 'page-12', 'page-13', 'page-14', 'page-15', 'page-16', 'finalPage'];
+        const pages = ['cover-page', 'page-1', 'page-2', 'page-3', 'page-4', 'finalPage'];
         let currentPage = 0;
 
         const prevBtn = document.getElementById('prev-btn');
@@ -285,109 +208,66 @@
         // Language switcher logic with simple text changes
         const languageSelect = document.getElementById('language-select');
         const content = {
-                en: [
-                    'Leo\'s Birthday',
-                    'Click next to start the story.',
-                    'Leo the lion was very excited when he woke up. Today was the day: it was his 7th birthday. As Leo got up and looked out the window, his smile suddenly dropped. It was raining in the Mighty Jungle. Oh no, Leo thought. We were supposed to go celebrate my birthday on the beach. How are we going to do that now?',
-                    'After eating breakfast, it was time for Leo’s friends to arrive, and soon someone knocked on the door. In stepped Polly the parrot and Sally the snake. Polly was wearing a yellow rain jacket and boots, and Sally had a red umbrella.',
-                    '“Oh, I know what we should do. Let’s bake a cake!” Sally said. “We could have a baking competition,” Polly suggested. “That way everyone can make something they like.” “That’s an amazing idea,” Leo agreed.',
-                    'Polly set up the bowls and ingredients. Sally measured out the flour, sugar, and butter. Leo found different fruits and nuts they could add to the cakes. Everyone was busy making their own version of a cake.',
-                    'Soon the kitchen was filled with the smell of sweet, warm cakes baking in the oven. Leo\'s friends chatted while they waited, laughing and sharing stories about past birthdays. The rain outside was still coming down, but nobody seemed to mind anymore.',
-                    'Finally, the cakes were ready. Everyone took out their creation and set it on the table. Leo’s cake was covered with blueberries, Polly’s had rainbow sprinkles, and Sally’s was drizzled with chocolate. They all looked delicious!',
-                    '“Let’s taste them!” Polly cheered. Each friend took a bite from the different cakes, enjoying every flavor. “This is the best birthday ever,” Leo said with a big smile.',
-                    'The friends voted on whose cake was the best, but they couldn’t choose just one. “They’re all so tasty!” Sally exclaimed. In the end, they decided everyone was a winner.',
-                    'After the baking competition, the friends cleaned up the kitchen. They danced to some music while tidying up, laughing and having fun as they worked together.',
-                    'As the day went on, the rain began to stop. Leo looked out the window again and saw the sun starting to peek through the clouds.',
-                    '“Hey, the rain is stopping! Maybe we can still go to the beach,” Leo said excitedly. His friends agreed, and they quickly packed up towels and snacks.',
-                    'When they arrived at the beach, the sky was clear, and the waves gently lapped at the shore. It was the perfect way to end Leo’s birthday.',
-                    'Leo and his friends spent the rest of the afternoon playing in the sand, swimming in the ocean, and enjoying the sunshine.',
-                    'As the sun set, they all sat down on the sand, watching the beautiful colors in the sky. Leo smiled, knowing this was a birthday he’d never forget.'
-                ],
-            
-                es: [
-                'El Cumpleaños de Leo',
-                'Haga clic en siguiente para comenzar la historia.',
-                'Leo el león estaba muy emocionado cuando se despertó. Hoy era el día: era su 7mo cumpleaños. Cuando Leo se levantó y miró por la ventana, su sonrisa de repente desapareció. Estaba lloviendo en la Selva Poderosa. Oh no, pensó Leo. Íbamos a celebrar mi cumpleaños en la playa. ¿Cómo vamos a hacerlo ahora?',
-                'Después de desayunar, era hora de que llegaran los amigos de Leo, y pronto alguien tocó la puerta. Entraron Polly el loro y Sally la serpiente. Polly llevaba una chaqueta amarilla y botas de lluvia, y Sally tenía un paraguas rojo.',
-                '“Oh, sé lo que deberíamos hacer. ¡Hagamos un pastel!” dijo Sally. “Podríamos hacer una competencia de repostería,” sugirió Polly. “Así todos podrán hacer algo que les guste.” “Es una idea asombrosa,” estuvo de acuerdo Leo.',
-                'Polly preparó los tazones e ingredientes. Sally midió la harina, el azúcar y la mantequilla. Leo encontró diferentes frutas y nueces que podían añadir a los pasteles. Todos estaban ocupados haciendo su propia versión de un pastel.',
-                'Pronto la cocina se llenó del aroma dulce de pasteles horneados. Los amigos de Leo charlaban mientras esperaban, riendo y compartiendo historias de cumpleaños anteriores. Afuera, la lluvia seguía cayendo, pero a nadie le importaba ya.',
-                'Finalmente, los pasteles estuvieron listos. Cada uno sacó su creación y la colocó en la mesa. El pastel de Leo estaba cubierto de arándanos, el de Polly tenía chispas de colores, y el de Sally estaba rociado con chocolate. ¡Todos se veían deliciosos!',
-                '“¡Vamos a probarlos!” exclamó Polly. Cada amigo probó los diferentes pasteles, disfrutando de cada sabor. “Este es el mejor cumpleaños de todos,” dijo Leo con una gran sonrisa.',
-                'Los amigos votaron sobre cuál pastel era el mejor, pero no pudieron elegir solo uno. “¡Todos son tan sabrosos!” exclamó Sally. Al final, decidieron que todos eran ganadores.',
-                'Después de la competencia de repostería, los amigos limpiaron la cocina. Bailaron al ritmo de la música mientras ordenaban, riendo y divirtiéndose mientras trabajaban juntos.',
-                'A medida que pasaba el día, la lluvia comenzó a detenerse. Leo miró por la ventana nuevamente y vio que el sol comenzaba a asomar entre las nubes.',
-                '“¡Oigan, la lluvia está parando! Quizás todavía podamos ir a la playa,” dijo Leo emocionado. Sus amigos estuvieron de acuerdo, y rápidamente empacaron toallas y bocadillos.',
-                'Cuando llegaron a la playa, el cielo estaba despejado y las olas golpeaban suavemente la orilla. Era la manera perfecta de terminar el cumpleaños de Leo.',
-                'Leo y sus amigos pasaron el resto de la tarde jugando en la arena, nadando en el océano y disfrutando del sol.',
-                'Al ponerse el sol, todos se sentaron en la arena, viendo los hermosos colores en el cielo. Leo sonreía, sabiendo que este era un cumpleaños que nunca olvidaría.'
+            en: [
+                'The Adventures of Timmy',
+                'Click next to start the story.',
+                'Page 1: Once upon a time...',
+                'Timmy was a curious little boy who loved to explore.',
+                'Page 2: Timmy\'s Journey Begins',
+                'One sunny day, Timmy found a mysterious map in his backyard.',
+                'Page 3: The Mysterious Forest',
+                'The map led Timmy to a forest filled with magical creatures.',
+                'Page 4: The Big Discovery',
+                'Timmy discovered an ancient treasure hidden deep within the forest.'
             ],
-
-    fi: [
-    'Leon syntymäpäivä',
-    'Napsauta seuraavaa aloittaaksesi tarinan.',
-    'Leijona Leo oli hyvin innoissaan herätessään. Tänään oli se päivä: hänen 7-vuotissyntymäpäivänsä. Kun Leo nousi ylös ja katsoi ikkunasta, hänen hymynsä katosi yhtäkkiä. Voimakkaassa viidakossa satoi. Voi ei, Leo ajatteli. Meidän piti mennä juhlimaan syntymäpäivääni rannalle. Miten voimme tehdä sen nyt?',
-    'Aamiaisen jälkeen oli aika Leon ystävien saapua, ja pian joku koputti ovelle. Sisään astuivat Polly papukaija ja Sally käärme. Pollylla oli yllään keltainen sadetakki ja saappaat, ja Sallylla oli punainen sateenvarjo.',
-    '“Tiedän mitä meidän pitäisi tehdä. Leivotaan kakku!” sanoi Sally. “Voisimme järjestää leivontakilpailun,” ehdotti Polly. “Näin kaikki voivat tehdä jotain, mistä pitävät.” “Se on mahtava idea,” Leo suostui.',
-    'Polly laittoi kulhot ja ainekset valmiiksi. Sally mittasi jauhot, sokerin ja voin. Leo löysi erilaisia hedelmiä ja pähkinöitä, joita he voisivat lisätä kakkuihin. Kaikki olivat kiireisiä tekemässä omaa kakkuaan.',
-    'Pian keittiö täyttyi makeiden, lämpimien kakkujen tuoksusta, kun ne paistuivat uunissa. Leon ystävät juttelivat odottaessaan, nauraen ja kertoen tarinoita menneistä syntymäpäivistä. Sade ulkona jatkui, mutta ketään ei enää haitannut.',
-    'Lopulta kakut olivat valmiita. Kaikki ottivat oman luomuksensa esille ja asettivat sen pöydälle. Leon kakku oli täynnä mustikoita, Pollyn kakussa oli sateenkaarikoristeita ja Sallyn kakku oli suklaakuorrutettu. Kaikki näyttivät herkullisilta!',
-    '“Maistetaan niitä!” Polly huudahti. Jokainen ystävä maistoi erilaisia kakkuja, nauttien jokaisesta mausta. “Tämä on paras syntymäpäivä ikinä,” Leo sanoi hymyillen leveästi.',
-    'Ystävät äänestivät, kuka oli tehnyt parhaan kakun, mutta he eivät pystyneet valitsemaan vain yhtä. “Ne kaikki ovat niin maukkaita!” Sally huudahti. Lopulta he päättivät, että kaikki olivat voittajia.',
-    'Leivontakilpailun jälkeen ystävät siivosivat keittiön. He tanssivat musiikin tahtiin samalla, kun siivosivat, nauraen ja pitäen hauskaa yhdessä työskennellessään.',
-    'Päivän edetessä sade alkoi lakata. Leo katsoi uudelleen ikkunasta ja näki auringon alkavan pilkistää pilvien takaa.',
-    '“Hei, sade on loppumassa! Ehkä voimme vielä mennä rannalle,” Leo sanoi innoissaan. Hänen ystävänsä olivat samaa mieltä, ja he pakkasivat nopeasti pyyhkeet ja eväät.',
-    'Kun he saapuivat rannalle, taivas oli kirkas ja aallot liplattivat lempeästi rannalle. Se oli täydellinen tapa päättää Leon syntymäpäivä.',
-    'Leo ja hänen ystävänsä viettivät loppuiltapäivän leikkien hiekassa, uiden meressä ja nauttien auringonpaisteesta.',
-    'Auringon laskiessa he istuivat hiekalle katsomaan kauniita värejä taivaalla. Leo hymyili tietäen, että tämä oli syntymäpäivä, jota hän ei koskaan unohtaisi.'
-],
-
-ja: [
-        'レオの誕生日',
-        '次をクリックしてストーリーを始めましょう。',
-        'ライオンのレオは目を覚ましたとき、とてもワクワクしていました。今日は彼の7歳の誕生日でした。レオが起きて窓の外を見ると、突然笑顔が消えました。マイティジャングルでは雨が降っていました。ああ、どうしよう、とレオは思いました。誕生日をビーチで祝う予定だったのに。これじゃあどうするの？',
-        '朝食を食べ終わった後、レオの友達がやってくる時間になりました。すぐに誰かがドアをノックしました。入ってきたのは、オウムのポリーとヘビのサリーでした。ポリーは黄色のレインコートとブーツを履いていて、サリーは赤い傘を持っていました。',
-        '「あっ、いいこと思いついた。ケーキを焼こう！」とサリーが言いました。「お菓子作りのコンテストをやったらどう？」とポリーが提案しました。「そうすれば、みんな好きなものを作れるわ」。「それは素晴らしいアイデアだ」とレオも賛成しました。',
-        'ポリーがボウルと材料を準備し、サリーが小麦粉、砂糖、バターを計量しました。レオはケーキに加えるためのさまざまな果物やナッツを見つけました。みんな自分のケーキ作りに夢中でした。',
-        'やがて、オーブンで焼けている甘い香りがキッチン中に広がりました。レオの友達はおしゃべりをしながら待っていて、過去の誕生日の話をして笑い合っていました。外ではまだ雨が降っていましたが、誰も気にしていませんでした。',
-        'ついにケーキが焼き上がりました。みんな自分の作ったケーキを取り出し、テーブルに並べました。レオのケーキはブルーベリーで覆われていて、ポリーのケーキは虹色のスプリンクルがかかっていて、サリーのケーキにはチョコレートがかかっていました。どれもおいしそうでした！',
-        '「さあ、食べてみよう！」とポリーが声を上げました。友達はそれぞれ異なるケーキを一口ずつ食べ、すべての味を楽しみました。「これまでで最高の誕生日だ」とレオは大きな笑顔で言いました。',
-        '友達はどのケーキが一番か投票しましたが、1つに決めることができませんでした。「どれもおいしいわ！」とサリーが言いました。結局、みんなが勝者だということになりました。',
-        'お菓子作りのコンテストが終わった後、友達は一緒にキッチンを片付けました。音楽に合わせて踊りながら片付けをし、みんなで笑って楽しみました。',
-        '時間が経つにつれて、雨が止み始めました。レオがもう一度窓の外を見ると、雲の間から太陽が顔を出し始めているのが見えました。',
-        '「ねえ、雨が止みそうだ！まだビーチに行けるかも」とレオは興奮して言いました。友達も賛成し、急いでタオルとスナックを詰め込みました。',
-        'ビーチに着いたとき、空は澄み渡り、波は穏やかに岸に打ち寄せていました。それはレオの誕生日を締めくくる完璧な方法でした。',
-        'レオと友達は午後の残りを砂で遊んだり、海で泳いだり、太陽の光を楽しんだりして過ごしました。',
-        '日が沈むと、彼らは砂の上に座り、空の美しい色を見つめました。レオは微笑みながら、この誕生日は決して忘れないだろうと思いました。'
-    ]
+            es: [
+                'Las Aventuras de Timmy',
+                'Haga clic en siguiente para comenzar la historia.',
+                'Página 1: Había una vez...',
+                'Timmy era un niño curioso al que le encantaba explorar.',
+                'Página 2: El Viaje de Timmy Comienza',
+                'Un día soleado, Timmy encontró un mapa misterioso en su patio trasero.',
+                'Página 3: El Bosque Misterioso',
+                'El mapa llevó a Timmy a un bosque lleno de criaturas mágicas.',
+                'Página 4: El Gran Descubrimiento',
+                'Timmy descubrió un antiguo tesoro escondido en lo profundo del bosque.'
+            ],
+            fr: [
+                'Les Aventures de Timmy',
+                'Cliquez sur suivant pour commencer l\'histoire.',
+                'Page 1: Il était une fois...',
+                'Timmy était un petit garçon curieux qui aimait explorer.',
+                'Page 2: Le Voyage de Timmy Commence',
+                'Un jour ensoleillé, Timmy trouva une carte mystérieuse dans son jardin.',
+                'Page 3: La Forêt Mystérieuse',
+                'La carte a conduit Timmy dans une forêt remplie de créatures magiques.',
+                'Page 4: La Grande Découverte',
+                'Timmy a découvert un trésor ancien caché au fond de la forêt.'
+            ]
         };
 
         languageSelect.addEventListener('change', (event) => {
-            const selectedLanguage = languageSelect.value;
+            const selectedLanguage = event.target.value;
             updateContent(selectedLanguage);
         });
 
         function updateContent(language) {
             const text = content[language];
             document.querySelector('#cover-page .page-title').innerText = text[0];
-            document.querySelector('#page-1 .page-title').innerText = text[1];
-            document.querySelector('#page-2 .page-title').innerText = text[2];
-            document.querySelector('#page-3 .page-title').innerText = text[3];
-            document.querySelector('#page-4 .page-title').innerText = text[4];
-            document.querySelector('#page-5 .page-title').innerText = text[5];
-            document.querySelector('#page-6 .page-title').innerText = text[6];
-            document.querySelector('#page-7 .page-title').innerText = text[7];
-            document.querySelector('#page-8 .page-title').innerText = text[8];
-            document.querySelector('#page-9 .page-title').innerText = text[9];
-            document.querySelector('#page-10 .page-title').innerText = text[10];
-            document.querySelector('#page-11 .page-title').innerText = text[11];
-            document.querySelector('#page-12 .page-title').innerText = text[12];
-            document.querySelector('#page-13 .page-title').innerText = text[13];
-            document.querySelector('#page-14 .page-title').innerText = text[14];
-            document.querySelector('#page-15 .page-title').innerText = text[15];
-        }
+            document.querySelector('#cover-page .page-content').innerText = text[1];
 
-        languageSelect.addEventListener('change', updateLanguage);
+            document.querySelector('#page-1 .page-title').innerText = text[2];
+            document.querySelector('#page-1 .page-content').innerText = text[3];
+
+            document.querySelector('#page-2 .page-title').innerText = text[4];
+            document.querySelector('#page-2 .page-content').innerText = text[5];
+
+            document.querySelector('#page-3 .page-title').innerText = text[6];
+            document.querySelector('#page-3 .page-content').innerText = text[7];
+
+            document.querySelector('#page-4 .page-title').innerText = text[8];
+            document.querySelector('#page-4 .page-content').innerText = text[9];
+        }
     </script>
 </body>
 </html>
